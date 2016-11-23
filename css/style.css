@@ -1,0 +1,303 @@
+/********** User - Basic data ***********/
+.user-info{
+	
+}
+
+.user-info li span {
+	border-radius: 0;
+    border-top: 0;
+    border-left: 3px solid transparent;
+    color: #444;
+    position: relative;
+    display: block;
+    padding: 10px 15px
+}
+
+.user-info li span:hover {
+	color: #444;
+    background: #f7f7f7;
+}
+
+.edit-user-info {
+	display: none;
+}
+
+.avatar-user-change {
+    float: left;
+}
+
+.avatar-user-change img{
+	width: 65px;
+    height: auto;
+    float: left;
+}
+
+/********** User - History ***********/
+ .history-member-panel {
+ 	margin-top: 20px;
+ 	min-height: 200px;
+ }
+ 
+ .history-member-box textarea {
+ 	margin: 10px 0 ;
+ }
+ 
+ .history-content {
+ 	  margin: 30px 0;
+ }
+ 
+.history-list {
+	 list-style-type: none;
+	 margin: 0 0 20px 0;
+	 padding: 0;
+	 width: 100%;
+	 font-size: 14px;
+}
+
+.history-list li {
+	padding: 10px !important;
+	background: #e7e8ea;
+	margin-bottom: 2px;
+	border-bottom: none !important;
+	border-left: 3px solid #58C9F3;
+}
+
+.history-list li i {
+  padding: 0 4px 0 10px;
+  cursor: pointer;
+  float: left;
+  color: #111;
+}
+
+.history-list .header {
+	border-bottom: 1px solid #E0E0E0;
+	margin-bottom: 8px;
+	text-align: right;
+	font-size: 12px;
+}
+
+.history-member-box {
+	display: none;
+}
+
+.member-link {
+	color: #222222;
+}
+
+/********** User - Task ***********/
+
+.task-member-panel {
+ 	margin-top: 20px;
+ 	min-height: 200px;
+ }
+ 
+ .task-member-box {
+}
+ 
+ .create-task-box {
+	margin-top: 15px;
+	color:#666!important;
+	display: none;
+}
+
+.create-task-box .top {
+}
+
+.create-task-box .top .to {
+	width: 20%;
+	float: left;
+}
+
+.create-task-box .top .date {
+	width: 25%;
+	float: left;
+}
+
+.create-task-box .top .date input {
+	font-size: 14px!important;
+}
+
+.create-task-box .top .hour {
+	width: 20%;
+	float: right;
+	text-align: right;
+}
+
+.create-task-box .middle textarea {
+	margin: 10px 0 10px 0 ;
+	height: 50px;
+	padding: 5px;
+}
+.clear {
+	clear: both;
+}
+.create-task-box a {
+	float: left;
+}
+
+.task-content {
+ 	  margin: 30px 0;
+ }
+
+.task-list {
+	 list-style-type: none;
+	 margin: 0 0 20px 0;
+	 padding: 0;
+	 width: 100%;
+	 font-size: 14px;
+	 color: #797979;
+}
+
+.task-list li {
+	padding: 10px !important;
+	background: #e7e8ea!important;
+	margin-bottom: 2px;
+	border-bottom: none !important;
+	
+}
+
+.task-list .completed {
+	border-left: 3px solid #43ac6a;
+}
+
+.task-list .pending {
+	border-left: 3px solid #f04124;
+}
+
+.task-list .today {
+	border-left: 3px solid #008cba;
+}
+
+.task-list .future {
+	border-left: 3px solid #e99002;
+}
+
+.task-list li i {
+  padding: 0 4px 0 10px;
+  cursor: pointer;
+  float: left;
+  color: #111;
+}
+
+.task-list .header {
+	border-bottom: 1px solid #E0E0E0;
+	margin-bottom: 8px;
+	font-size: 12px;
+}
+
+.task-list .header .status {
+	float: left;
+}
+
+.task-list .header .member {
+	float: right;
+}
+
+.task-list .header .info {
+	float: left;
+}
+
+.task-list .footer {
+	border-top: 1px solid #E0E0E0;
+	margin-top: 4px;
+	padding: 4px;
+	font-size: 11px;
+}
+
+.task-list .footer a {
+	float: left;
+	color: rgb(67, 172, 106);
+}
+
+.task-list  .icon {
+	float: right;
+	color: rgb(67, 172, 106);
+	margin-left: 20px;
+}
+
+/********** User - Payments ***********/
+
+.segment-user-payment {
+	margin-bottom: 20px;
+}
+
+.payment-item .info-box-icon a i{
+	color: #fff;
+}
+
+.payment-item .info-box-icon i{
+	margin-top: 34px;
+}
+
+.payment-item .info-box-icon {
+	height: 106px!important; 
+}
+
+.payment-options {
+	margin:0;padding:0;list-style:none
+}
+/****** Main Task Menu ********/
+
+.main-menu-tasks {
+	
+}
+
+.main-menu-tasks a {
+	text-transform: lowercase;
+	margin-left: 30px;
+	padding-bottom: 2px;
+	color: #222;
+}
+
+.main-menu-tasks a:hover {
+	text-decoration: none;
+}
+
+.pending-task-border {
+	
+}
+
+
+.roomList {
+	font-size: 14px;
+}
+
+.datepicker{z-index:1151 !important;}
+
+
+
+.vertical-spacer {
+	height: 40px;
+}
+
+#boxChat {
+	min-height: 450px;
+}
+
+.add-room-boxes {
+	display: none;
+}
+
+#paymentOptionsCancelled {
+	color: red;
+}
+
+.deleteApartment {
+	margin-top:7px;
+}
+
+#deleteOwner {
+	margin-left: 10px;
+}
+
+#deleteRoom {
+	margin-left: 10px;
+}
+
+#deleteCategory {
+	margin-left: 10px;
+}
+
+.direct-chat-text .unread {
+	weight: bold;
+}
