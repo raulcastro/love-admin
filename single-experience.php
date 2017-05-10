@@ -8,10 +8,10 @@
 	require_once $root.'backends/admin-backend.php';
 	require_once $root.'/'.'views/Layout_View.php';
 	
-	$data 	= $backend->loadBackend('add-owner');
+	$data 	= $backend->loadBackend('edit-experience');
 	
-	$data['title'] 			= 'Add travel package';
-	$data['section'] 		= 'add-travel';
+	$data['title'] 			= 'Edit experience';
+	$data['section'] 		= 'edit-experience';
 	$data['icon'] 			= 'fa-user-plus';
 	$data['template-class'] = '';
 	

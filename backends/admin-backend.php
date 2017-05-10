@@ -172,8 +172,6 @@ class generalBackend
 				$data['memberRooms'] 	= $memberRooms;
 				
 				$data['messages'] 	= $this->model->getMessagesByMember($memberId);
-				
-				
 			break;
 			
 // 			Tasks
@@ -203,6 +201,82 @@ class generalBackend
 				$reservationsArray = $this->model->getReservationsByRange($start, $end);
 				$data['reservations'] = $reservationsArray; 
 			break;
+			
+			case 'main-gallery':
+				// 		array of the main sliders
+				$slidersArray = $this->model->getMainSliders();
+				$data['mainSliders'] = $slidersArray;
+			break;
+			
+			case 'general-gallery':
+				// 		array of the main sliders
+				$slidersArray = $this->model->getGeneralSliders();
+				$data['mainSliders'] = $slidersArray;
+			break;
+			
+			case 'edit-destination':
+				$data['destination'] = $this->model->getDestinationById($_GET['destinationId']);
+				$data['hotels'] = $this->model->getHotelsByDestinationId($_GET['destinationId']);
+			break;
+			
+			case 'destinations':
+				$data['destinations'] = $this->model->getAllDestinations();
+			break;
+			
+			case 'testimonials':
+				$data['testimonials'] = $this->model->getAllTestimonials();
+			break;
+			
+			case 'edit-extra':
+				$data['extra'] = $this->model->getExtraById($_GET['extraId']);
+			break;
+			
+			case 'extras':
+				$data['extras'] = $this->model->getAllExtras();
+			break;
+			
+			case 'edit-experience':
+				$data['experience'] = $this->model->getExperienceById($_GET['experienceId']);
+
+				$destinationArray 		= $this->model->getAllDestinations();
+				$i = 0;
+				foreach ($destinationArray as $destination)
+				{
+					if ($this->model->checkRelacionDestinationsExperiences($_GET['experienceId'], $destination['destination_id']))
+					{
+						$destinationArray[$i]['checked'] = '1';
+					}
+					else 
+					{
+						$destinationArray[$i]['checked'] = '0';
+					}
+				
+					$i++;
+				}
+				$data['destinations'] 	= $destinationArray;
+				
+				$extrasArray 		= $this->model->getAllExtras();
+				$i = 0;
+				foreach ($extrasArray as $extra)
+				{
+					if ($this->model->checkRelacionExtrasExperiences($_GET['experienceId'], $extra['extra_id']))
+					{
+						$extrasArray[$i]['checked'] = '1';
+					}
+					else
+					{
+						$extrasArray[$i]['checked'] = '0';
+					}
+				
+					$i++;
+				}
+				$data['extras'] 	= $extrasArray;
+			break;
+			
+			case 'experiences':
+				$data['experiences'] = $this->model->getAllExperiences();
+			break;
+			
 			
 			default:
 			break;

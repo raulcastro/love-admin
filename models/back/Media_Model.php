@@ -237,7 +237,6 @@ class Media_Model
     
     public function cropImage($data, $dst_w, $dst_h, $source, $destination)
     {
-    	echo $source;
     	//Quality
     	$quality   		= 100;
     	

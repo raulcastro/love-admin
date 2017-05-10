@@ -507,7 +507,7 @@ class Tools
      */
     public static function validateText($string, $max = 2000, $min = 0)
     {
-    	$pattern = "/^[áéíóúÁÉÍÓÚñÑ-\w\s\.\,\?\¿\!\¡\:\;\@]{".$min.",".$max."}$/";
+    	/*$pattern = "/^[áéíóúÁÉÍÓÚñÑ-\w\s\.\,\?\¿\!\¡\:\;\@]{".$min.",".$max."}$/";
     	if(preg_match($pattern, $string))
     	{
     		return true;
@@ -515,7 +515,8 @@ class Tools
     	else
     	{
     		return false;
-    	}
+    	}*/
+    	return true;
     }
     
     /**

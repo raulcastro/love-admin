@@ -1382,6 +1382,661 @@ class Layout_Model
 			return false;
 		}
 	}
+	
+	/**
+	 * getMainSliders
+	 *
+	 * sliders that should be displayed in the index
+	 * @param NULL
+	 * @return array on succes, false on fail
+	 */
+	
+	public function getMainSliders()
+	{
+		try
+		{
+			$query = 'SELECT *
+	        		FROM main_gallery
+	                ORDER BY picture_id DESC';
+			return $this->db->getArray($query);
+		}
+		catch (Exception $e)
+		{
+			return false;
+		}
+	}
+	
+	public function addSlider($name)
+	{
+		try
+		{
+			$query = 'INSERT INTO main_gallery(name)
+	                VALUES("'.$name.'")';
+			if ($this->db->run($query))
+				return $this->db->insert_id;
+		}
+		catch (Exception $e)
+		{
+			return false;
+		}
+	}
+	
+	public function editSliderInfo($data)
+	{
+		try
+		{
+			$query = 'UPDATE main_gallery
+					SET title = ?,
+					link = ?,
+					promos = ?
+					WHERE picture_id = ?';
+			$prep = $this->db->prepare($query);
+			$prep->bind_param('sssi',
+					$data['title'],
+					$data['link'],
+					$data['promos'],
+					$data['sliderId']);
+			return $prep->execute();
+		}
+		catch (Exception $e)
+		{
+			return false;
+		}
+	}
+	
+	public function deleteSlider($picture_id)
+	{
+		try
+		{
+			$picture_id = (int) $picture_id;
+	
+			$query = 'DELETE FROM main_gallery WHERE picture_id = '.$picture_id;
+	
+			return $this->db->run($query);
+		}
+		catch (Exception $e)
+		{
+			return false;
+		}
+	}
+	
+	/**
+	 * getMainSliders
+	 *
+	 * sliders that should be displayed in the index
+	 * @param NULL
+	 * @return array on succes, false on fail
+	 */
+	
+	public function getGeneralSliders()
+	{
+		try
+		{
+			$query = 'SELECT *
+	        		FROM general_gallery
+	                ORDER BY picture_id DESC';
+			return $this->db->getArray($query);
+		}
+		catch (Exception $e)
+		{
+			return false;
+		}
+	}
+	
+	public function addGeneralSlider($name)
+	{
+		try
+		{
+			$query = 'INSERT INTO general_gallery(name)
+	                VALUES("'.$name.'")';
+			if ($this->db->run($query))
+				return $this->db->insert_id;
+		}
+		catch (Exception $e)
+		{
+			return false;
+		}
+	}
+	
+	public function editGeneralSliderInfo($data)
+	{
+		try
+		{
+			$query = 'UPDATE general_gallery
+					SET title = ?,
+					link = ?,
+					promos = ?
+					WHERE picture_id = ?';
+			$prep = $this->db->prepare($query);
+			$prep->bind_param('sssi',
+					$data['title'],
+					$data['link'],
+					$data['promos'],
+					$data['sliderId']);
+			return $prep->execute();
+		}
+		catch (Exception $e)
+		{
+			return false;
+		}
+	}
+	
+	public function deleteGeneralSlider($picture_id)
+	{
+		try
+		{
+			$picture_id = (int) $picture_id;
+	
+			$query = 'DELETE FROM general_gallery WHERE picture_id = '.$picture_id;
+	
+			return $this->db->run($query);
+		}
+		catch (Exception $e)
+		{
+			return false;
+		}
+	}
+	
+	public function addDestination($data)
+	{
+		try {
+			$query = 'INSERT INTO destinations(name) VALUES(?)';
+			
+			$prep = $this->db->prepare($query);
+			
+			$prep->bind_param('s',
+					$data['destination']);
+			
+			if ($prep->execute())
+			{
+				return $prep->insert_id;
+			}
+			else 
+			{
+				return false;
+			}
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function getDestinationById($id)
+	{
+		try {
+			$query = 'SELECT * FROM destinations WHERE destination_id = '.$id;
+			
+			return $this->db->getRow($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function updateDestination($data)
+	{
+		$query = 'UPDATE destinations SET name = ?, small_description = ?, description = ? WHERE destination_id = '.$data['destinationId'];
+			
+		$prep = $this->db->prepare($query);
+			
+		$prep->bind_param('sss',
+				$data['destinationName'],
+				$data['smallDescription'],
+				$data['description']);
+			
+		return $prep->execute();
+		
+	}
+	
+	public function getAllDestinations()
+	{
+		try {
+			$query = 'SELECT * FROM destinations ORDER BY destination_id DESC';
+			
+			return $this->db->getArray($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function deleteDestination($id)
+	{
+		try {
+			$query = 'DELETE FROM destinations WHERE destination_id = '.$id;
+			
+			return $this->db->run($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function updateDestinationPhoto($name, $id)
+	{
+		try {
+			$query = 'UPDATE destinations SET photo = "'.$name.'" WHERE destination_id = '.$id;
+			return $this->db->run($query);
+		} catch (Exception $e) {
+			return false;
+		}
+		
+	}
+	
+	public function addTestimonial($data)
+	{
+		try {
+			$query = 'INSERT INTO testimonials(name, testimonial) VALUES(?, ?)';
+			
+			$prep = $this->db->prepare($query);
+				
+			$prep->bind_param('ss',
+					$data['testimonialName'],
+					$data['testimonialDescription']);
+				
+			return $prep->execute();
+			
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function getAllTestimonials()
+	{
+		try {
+			$query = 'SELECT * FROM testimonials ORDER BY testimonial_id DESC';
+			return $this->db->getArray($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function deleteTestimonial($testimonialId)
+	{
+		try {
+			$testimonialId = (int) $testimonialId;
+			$query = 'DELETE FROM testimonials WHERE testimonial_id = '.$testimonialId;
+			return $this->db->run($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function addExtra($data)
+	{
+		try {
+			$query = 'INSERT INTO extras(name) VALUES(?)';
+				
+			$prep = $this->db->prepare($query);
+				
+			$prep->bind_param('s',
+					$data['extra']);
+				
+			if ($prep->execute())
+			{
+				return $prep->insert_id;
+			}
+			else
+			{
+				return false;
+			}
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function getExtraById($id)
+	{
+		try {
+			$query = 'SELECT * FROM extras WHERE extra_id = '.$id;
+				
+			return $this->db->getRow($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function updateExtra($data)
+	{
+		$query = 'UPDATE extras SET name = ?, price = ?, small_description = ?, description = ? WHERE extra_id = '.$data['extraId'];
+			
+		$prep = $this->db->prepare($query);
+			
+		$prep->bind_param('sdss',
+				$data['extraName'],
+				$data['extraPrice'],
+				$data['smallDescription'],
+				$data['description']);
+			
+		return $prep->execute();
+	
+	}
+	
+	public function getAllExtras()
+	{
+		try {
+			$query = 'SELECT * FROM extras ORDER BY extra_id DESC';
+				
+			return $this->db->getArray($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function deleteExtra($id)
+	{
+		try {
+			$query = 'DELETE FROM extras WHERE extra_id = '.$id;
+				
+			return $this->db->run($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function updateExtraPhoto($name, $id)
+	{
+		try {
+			$query = 'UPDATE extras SET photo = "'.$name.'" WHERE extra_id = '.$id;
+			return $this->db->run($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	
+	}
+	
+	public function addExperiences($data)
+	{
+		try {
+			$query = 'INSERT INTO experiencies(name) VALUES(?)';
+				
+			$prep = $this->db->prepare($query);
+				
+			$prep->bind_param('s',
+					$data['experience']);
+				
+			if ($prep->execute())
+			{
+				return $prep->insert_id;
+			}
+			else
+			{
+				return false;
+			}
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function addHotel($data)
+	{
+		try {
+			$query = 'INSERT INTO hotels(name, destination_id) VALUES(?, ?)';
+	
+			$prep = $this->db->prepare($query);
+	
+			$prep->bind_param('si',
+					$data['hotel'],
+					$data['destination']);
+	
+			return $prep->execute();
+			
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function getHotelsByDestinationId($destinationID)
+	{
+		try {
+			$destinationID = (int) $destinationID;
+			$query = 'SELECT * FROM hotels WHERE destination_id = '.$destinationID.' ORDER BY hotel_id DESC';
+			
+			return $this->db->getArray($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function getHotelByHotelId($hotelId)
+	{
+		try {
+			$hotelId = (int) $hotelId;
+			$query = 'SELECT * FROM hotels WHERE hotel_id = '.$hotelId;
+			return $this->db->getRow($query);
+			
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function deleteHotel($hotelId)
+	{
+		try {
+			$hotelId = (int) $hotelId;
+			$query = 'DELETE FROM hotels WHERE hotel_id = '.$hotelId;
+			return $this->db->run($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function getAllHotelRangesByHotel($hotelId)
+	{
+		try {
+			$hotelId = (int) $hotelId;
+			$query = 'SELECT DATE_FORMAT(from_date, "%m/%d/%Y") AS from_date,
+					DATE_FORMAT(to_date, "%m/%d/%Y") AS to_date,
+					price,
+					hotel_range_id
+					FROM hotel_ranges WHERE hotel_id = '.$hotelId;
+			return $this->db->getArray($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function addHotelRange($hotelId, $fromDate, $toDate, $price)
+	{
+		try {
+			$hotelId = (int) $hotelId;
+			
+			$query = 'INSERT INTO hotel_ranges(hotel_id, from_date, to_date, price) VALUES(?, ?, ?, ?)';
+			
+			$prep = $this->db->prepare($query);
+			
+			$prep->bind_param('issd',
+					$hotelId,
+					$fromDate,
+					$toDate,
+					$price);
+			
+			return $prep->execute();
+			
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function getLastHotelRanges($hotelId)
+	{
+		try {
+			$hotelId = (int) $hotelId;
+			
+			$query = 'SELECT 
+				DATE_FORMAT(DATE_ADD(to_date, INTERVAL 1 DAY), "%m/%d/%Y") AS from_date, 
+				DATE_FORMAT(DATE_ADD(to_date, INTERVAL 2 DAY), "%m/%d/%Y") AS to_date  
+				FROM hotel_ranges 
+				WHERE hotel_id = '.$hotelId.'
+				ORDER BY hotel_range_id DESC
+				limit 1;';
+			return $this->db->getRow($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function deleteHotelRange($rangeId)
+	{
+		try {
+			$rangeId = (int) $rangeId;
+			$query = 'DELETE FROM hotel_ranges WHERE hotel_range_id = '.$rangeId;
+			return $this->db->run($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function addExperience($data)
+	{
+		try {
+			$query = 'INSERT INTO experiences(name) VALUES(?)';
+				
+			$prep = $this->db->prepare($query);
+				
+			$prep->bind_param('s',
+					$data['experience']);
+				
+			if ($prep->execute())
+			{
+				return $prep->insert_id;
+			}
+			else
+			{
+				return false;
+			}
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function getExperienceById($id)
+	{
+		try {
+			$query = 'SELECT * FROM experiences WHERE experience_id = '.$id;
+				
+			return $this->db->getRow($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function updateExperience($data)
+	{
+		$query = 'UPDATE experiences SET name = ?, small_description = ?, description = ? WHERE experience_id = '.$data['experienceId'];
+			
+		$prep = $this->db->prepare($query);
+			
+		$prep->bind_param('sss',
+				$data['experienceName'],
+				$data['smallDescription'],
+				$data['description']);
+			
+		return $prep->execute();
+	
+	}
+	
+	public function deleteExperience($id)
+	{
+		try {
+			$query = 'DELETE FROM experiences WHERE experience_id = '.$id;
+				
+			return $this->db->run($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function updateExperiencesPhoto($name, $id)
+	{
+		try {
+			$query = 'UPDATE experiences SET photo = "'.$name.'" WHERE experience_id = '.$id;
+			return $this->db->run($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	
+	}
+	
+	public function updateExperiencesSwiper($name, $id)
+	{
+		try {
+			$query = 'UPDATE experiences SET swiper = "'.$name.'" WHERE experience_id = '.$id;
+			return $this->db->run($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	
+	}
+	
+	public function getAllExperiences()
+	{
+		try {
+			$query = 'SELECT * FROM experiences ORDER BY experience_id DESC';
+				
+			return $this->db->getArray($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function addRelacionDestinationsExperiences($sectionId, $aliadoId)
+	{
+		try {
+			$query = 'INSERT INTO experiences_destinations(experience_id, destination_id) VALUES('.$sectionId.', '.$aliadoId.')';
+	
+			return $this->db->run($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function deleteRelacionDestinationsExperiences($sectionId)
+	{
+		try {
+			$query = 'DELETE FROM experiences_destinations WHERE experience_id = '.$sectionId;
+			return $this->db->run($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function checkRelacionDestinationsExperiences($experienceId, $destinationId)
+	{
+		try {
+			$query = 'SELECT * FROM experiences_destinations WHERE experience_id = '.$experienceId.' AND destination_id = '.$destinationId;
+			return $this->db->getArray($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function addRelacionExtrasExperiences($sectionId, $aliadoId)
+	{
+		try {
+			$query = 'INSERT INTO experiences_extras(experience_id, extra_id) VALUES('.$sectionId.', '.$aliadoId.')';
+	
+			return $this->db->run($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function deleteRelacionExtrasExperiences($sectionId)
+	{
+		try {
+			$query = 'DELETE FROM experiences_extras WHERE experience_id = '.$sectionId;
+			return $this->db->run($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function checkRelacionExtrasExperiences($experienceId, $extraId)
+	{
+		try {
+			$query = 'SELECT * FROM experiences_extras WHERE experience_id = '.$experienceId.' AND extra_id = '.$extraId;
+			return $this->db->getArray($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
 }
 
 

@@ -39,7 +39,7 @@
 			$this->password 	= $passwordField;
 			$this->returnField 	= $returnField;
 			
-			if ($_POST["submitButton"]) {
+			if (isset($_POST["submitButton"])) {
 				
 				$type = $this->validateLogin();
 				if($type != 0)

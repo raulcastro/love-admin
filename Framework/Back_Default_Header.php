@@ -8,6 +8,8 @@
  * @author     Raul Castro <rd.castro.silva@gmail.com>
  */
 
+global $db;
+
 date_default_timezone_set('America/Bogota');
 
 $root = $_SERVER['DOCUMENT_ROOT'];

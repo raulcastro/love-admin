@@ -298,22 +298,52 @@
 	margin-left: 10px;
 }
 
-.direct-chat-text .unread {
-	weight: bold;
+.company-item {
+	height: 260px!important;
+	overflow: hidden;
 }
 
+.company-item .profile-user-img {
+	width: 220px;
+}
 
+.company-item .profile-username {
+	font-size: 16px;
+}
 
+.widget-user-2 .widget-user-header {
+    padding: 10px 0 50px 10px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
 
+.widget-user-2 .widget-user-image > img {
+	width: 200px!important;
+	border-radius: 3px;
 
+}
 
+.widget-user-2 .widget-user-username, .widget-user-2 .widget-user-desc {
+    margin-left: 221px;
+}
 
+.categoriesSelection ul li {
+    float: left;
+    margin: 10px;
+        list-style: none;
+}
 
+.categoriesSelection ul li a {
+    background-color: #00c0ef !important;
+    color: #fff;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+}
 
-
-
-
-
+.categoriesSelection ul li a.active {
+    background-color: #3c8dbc !important;
+}
 
 /* Logo uploader */
 
@@ -572,22 +602,25 @@
 	font-size: 16px;
 }
 
-#destinationSuccess, #experienceSuccess, #extraSuccess {
-	display: none;
-}
 
-.testimonial-post {
-	padding: 10px!important;
-}
 
-#hotelDetail {
-	display: none;
-}
 
-.aliados-choose {
-	margin-bottom: 15px;
-}
 
-.aliados-choose label{ 
-	font-weight: normal;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

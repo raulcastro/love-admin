@@ -98,10 +98,6 @@ class Layout_View
 					echo self::getMemberHead();
 				break;
 				
-				case 'rooms':
-					echo self::getRoomsHead();
-				break;
-				
 				case 'room':
 					echo self::getRoomHead();
 				break;
@@ -111,11 +107,55 @@ class Layout_View
 				break;
 				
 				case 'profile':
-					echo self :: getProfileHead();
+					echo self::getProfileHead();
 				break;
 				
-				case 'add-travel':
-					echo self :: getAddTravelHead();
+				case 'main-gallery':
+					echo self::getMainGalleryHead();
+				break;
+				
+				case 'general-gallery':
+					echo self::getGeneralGalleryHead();
+				break;
+				
+				case 'add-destination':
+					echo self :: getAddDestinationHead();
+				break;
+				
+				case 'edit-destination':
+					echo self::getDestinationHead();
+				break;
+				
+				case 'destinations':
+					echo self::getDestinationHead();
+				break;
+				
+				case 'testimonials':
+					echo self::getTestimonialHead();
+				break;
+				
+				case 'add-experience':
+					echo self::getAddExperienceHead();
+				break;
+				
+				case 'edit-experience':
+					echo self::getExperienceHead();
+				break;
+				
+				case 'experiences':
+					echo self::getExperiencesListHead();
+				break;
+				
+				case 'add-extra':
+					echo self::getAddExtraHead();
+				break;
+				
+				case 'edit-extra':
+					echo self::getExtraHead();
+				break;
+				
+				case 'extras':
+					echo self::getExtraListHead();
 				break;
 			}
 			?>
@@ -172,18 +212,6 @@ class Layout_View
 								echo self::getAllMembers();
 							break;
 							
-							case 'condo':
-								echo self::getRoomsByCondo();
-							break;
-							
-							case 'rooms':
-								echo self::getRoomsContent();
-							break;
-							
-							case 'room':
-								echo self::getRoomContent();
-							break;
-							
 							case 'tasks':
 								echo self :: getAllTasks();
 							break;
@@ -192,10 +220,54 @@ class Layout_View
 								echo self :: getProfileContent();
 							break;
 							
-							case 'add-travel':
-								echo self :: getAddTravelContent();
+							case 'main-gallery':
+								echo self::getMainGalleryContent();
 							break;
-
+									
+							case 'general-gallery':
+								echo self::getGeneralGalleryContent();
+							break;
+							
+							case 'add-destination':
+								echo self :: getAddDestinationContent();
+							break;
+							
+							case 'edit-destination':
+								echo self::getDestinationContent();
+							break;
+							
+							case 'destinations':
+								echo self::getDestinationsContent();
+							break;
+							
+							case 'testimonials':
+								echo self::getTestimonialContent();
+							break;
+							
+							case 'add-experience':
+								echo self::getAddExperienceContent();
+							break;
+							
+							case 'experiences':
+								echo self::getExperiencesListContent();
+							break;
+							
+							case 'edit-experience':
+								echo self::getExperienceContent();
+							break;
+							
+							case 'add-extra':
+								echo self::getAddExtraContent();
+							break;
+							
+							case 'edit-extra':
+								echo self::getExtraContent();
+							break;
+							
+							case 'extras':
+								echo self::getExtraListContent();
+							break;
+							
 							default :
 								# code...
 							break;
@@ -248,14 +320,6 @@ class Layout_View
 					echo self::getMemberScripts();
 				break;
 				
-				case 'rooms':
-					echo self::getRoomsScripts();
-				break;
-				
-				case 'room':
-					echo self::getRoomScripts();
-				break;
-				
 				case 'tasks':
 					echo self::getTasksScripts();
 				break;
@@ -264,8 +328,52 @@ class Layout_View
 					echo self::getProfileScripts();
 				break;
 				
-				case 'add-travel':
-					echo self::getAddTravelScripts();
+				case 'main-gallery':
+					echo self::getMainGalleryScripts();
+				break;
+				
+				case 'add-destination':
+					echo self::getAddDestinationScripts();
+				break;
+				
+				case 'general-gallery':
+					echo self::getGeneralGalleryScripts();
+				break;
+				
+				case 'edit-destination':
+					echo self::getDestinationScripts();
+				break;
+				
+				case 'destinations':
+					echo self::getDestinationScripts();
+				break;
+				
+				case 'testimonials':
+					echo self::getTestimonialScripts();
+				break;
+				
+				case 'add-experience':
+					echo self::getAddExperienceScripts();
+				break;
+				
+				case 'edit-experience':
+					echo self::getExperienceScripts();
+				break;
+				
+				case 'experiences':
+					echo self::getExperiencesListContent();
+				break;
+				
+				case 'add-extra':
+					echo self::getAddExtraScripts();
+				break;
+				
+				case 'edit-extra':
+					echo self::getExtraScripts();
+				break;
+				
+				case 'extras':
+					echo self::getExtraListScripts();
 				break;
 			}
 			?>
@@ -603,14 +711,67 @@ class Layout_View
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-users"></i>
-                            <span>Travel packages</span>
+                            <span>Experiences</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="/add-travel/"><i class="fa fa-circle-o"></i> Add travel package</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Packages list</a></li>
+                            <li><a href="/add-experience/"><i class="fa fa-circle-o"></i> Add experience</a></li>
+                            <li><a href="/experiences/"><i class="fa fa-circle-o"></i> Experience list</a></li>
                         </ul>
                     </li>
+                    
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-map"></i>
+                            <span>Destinations</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/add-destination/"><i class="fa fa-map"></i> Add destination</a></li>
+                            <li><a href="/destinations/"><i class="fa fa-circle-o"></i> Destination list</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-users"></i>
+                            <span>Extras</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/add-extra/"><i class="fa fa-circle-o"></i> Add extra</a></li>
+                            <li><a href="/extras/"><i class="fa fa-circle-o"></i> Extra list</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+						<a href="">
+							<i class="fa fa-money"></i> <span>Promotions</span>
+							<!-- <small class="label pull-right bg-yellow">12</small> -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="/testimonials/">
+							<i class="fa fa-users"></i> <span>Testimonials</span>
+							<!-- <small class="label pull-right bg-yellow">12</small> -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="/add-main-gallery/">
+							<i class="fa fa-image"></i> <span>Main Gallery</span>
+							<!-- <small class="label pull-right bg-yellow">12</small> -->
+						</a>
+					</li>
+					
+					<li>
+						<a href="/add-general-gallery/">
+							<i class="fa fa-image"></i> <span>General Sliders</span>
+						</a>
+					</li>
+					
+					
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>
@@ -705,7 +866,6 @@ class Layout_View
 							<th>Name</th>
 							<th>Phone</th>
 							<th>Email</th>
-							<th>Address</th>
 							<th>Date</th>
 	                    </tr>
 	                    <?php 
@@ -725,7 +885,6 @@ class Layout_View
 							</td>
 							<td><?php echo $member['phone_one']; ?></td>
 							<td><?php echo $member['email_one']; ?></td>
-							<td><?php echo $member['address']; ?></td>
 							<td><?php echo Tools::formatMYSQLToFront($member['date']); ?></td>
 						</tr>
 							<?php
@@ -2030,103 +2189,6 @@ class Layout_View
         return $content;
     }
     
-    public function getSingleMessage($message)
-    {
-    	ob_start();
-    	$class = '';
-    	$className = '';
-    	$classDate = '';
-    	$name = '';
-    	$image = '';
-//     	var_dump($message);
-    	if ($message['from_user'] == $this->data['memberInfo']['member_id'])
-    	{
-    		$class = 'right';
-    		$className = 'pull-right';
-    		$classDate = 'pull-left';
-    		$name = $message['member_name'];
-    		if ($message['avatar'])
-    		{
-    			$image = "/images/owners-profile/avatar/".$message['avatar'];
-    		}
-    		else 
-    		{
-    			$image = "/dist/img/default-user.jpg";
-    		}
-    	}
-    	else 
-    	{
-    		if ($this->data['userInfo']['avatar'])
-    		{
-    			$image = "/images/owners-profile/avatar/".$this->data['userInfo']['avatar'];
-    		}
-    		else
-    		{
-    			$image = "/dist/img/user2-160x160.jpg";
-    		}
-    		
-    		$className = 'pull-left';
-    		$classDate = 'pull-right';
-    		$name = $message['user_name'];
-    	}
-    	?>
-    	<!-- Message to the right -->
-		<div class="direct-chat-msg <?php echo $class; ?>">
-			<div class="direct-chat-info clearfix">
-				<span class="direct-chat-name <?php echo $className; ?>"><?php echo $name; ?></span>
-				<span class="direct-chat-timestamp <?php echo $classDate; ?>"><?php echo $message['date']; ?></span>
-			</div><!-- /.direct-chat-info -->
-			<img class="direct-chat-img" src="<?php echo $image; ?>" alt="message user image"><!-- /.direct-chat-img -->
-			<div class="direct-chat-text unread">
-				<?php echo $message['message']; ?>
-			</div><!-- /.direct-chat-text -->
-		</div><!-- /.direct-chat-msg -->
-    	<?php
-    	$content = ob_get_contents();
-    	ob_end_clean();
-    	return $content;
-    }
-    
-    public function getMessagesPanel()
-    {
-    	ob_start();
-    	?>
-    	<!-- DIRECT CHAT WARNING -->
-		<div class="box box-primary direct-chat direct-chat-primary">
-			<div class="box-header">
-				<h3 class="box-title">Documents</h3>
-				<!-- <div class="box-tools pull-right">
-					<span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>
-				</div> -->
-			</div><!-- /.box-header -->
-			<div class="box-body" id="">
-				<!-- Conversations are loaded here -->
-				<div class="direct-chat-messages" id="boxChat">
-					<?php 
-					if ($this->data['messages'])
-					{
-						foreach ($this->data['messages'] as $message)
-						{
-							echo $this->getSingleMessage($message);
-						}
-					}
-					?>
-				</div><!--/.direct-chat-messages-->
-			</div><!-- /.box-body -->
-			<div class="box-footer">
-					<div class="input-group">
-						<input type="text" name="message" placeholder="Type Message ..." class="form-control" id="chatMessage">
-						<span class="input-group-btn">
-							<button type="button" class="btn btn-primary btn-flat" id="addChatMessage">Send</button>
-						</span>
-					</div>
-			</div><!-- /.box-footer-->
-		</div><!--/.direct-chat -->
-    	<?php
-    	$content = ob_get_contents();
-    	ob_end_clean();
-    	return $content;
-    }
     
     public function getMemberHead()
     {
@@ -2524,341 +2586,7 @@ class Layout_View
     	return $scripts;
     }
     
-    public function getRoomsContent()
-    {
-    	ob_start();
-    	?>
-		<div class="box box-default">
-			<div class="box-header with-border">
-				<h3 class="box-title">Add Room</h3>
-            </div><!-- /.box-header -->
-            <div class="box-body" style="display: block;">
-				<div class="row">
-					<div class="col-md-4">
-						<div class="form-group">
-							<label for="exampleInputEmail1">Room name</label>
-							<input type="text" class="form-control" id="roomName" placeholder="Room name" value="" >
-                  		</div><!-- /.form-group -->
-					</div><!-- /.col -->
-					
-					<div class="col-md-4">
-						<div class="form-group">
-							<label>Room type</label>
-							<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" id="roomType">
-								<?php 
-								foreach ($this->data['types'] as $type)
-								{
-									?>
-								<option value="<?php echo $type['room_type_id']; ?>"><?php echo $type['room_type']; ?></option>
-									<?php
-								}
-								?>
-							</select>
-                  		</div><!-- /.form-group -->
-					</div><!-- /.col -->
-					
-					<div class="col-md-4">
-						<div class="form-group">
-							<label>Condo</label>
-							<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" id="condoId">
-								<?php 
-								foreach ($this->data['condos'] as $type)
-								{
-									?>
-								<option value="<?php echo $type['condo_id']; ?>"><?php echo $type['condo']; ?></option>
-									<?php
-								}
-								?>
-							</select>
-                  		</div><!-- /.form-group -->
-					</div><!-- /.col -->
-				</div><!-- /.row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="form-group">
-							<label for="exampleInputEmail1">Description</label>
-							<textarea class="form-control" rows="3" placeholder="Room description ..." id="roomDescription"></textarea>
-                  		</div><!-- /.form-group -->
-					</div><!-- /.col -->
-				</div>
-			</div><!-- /.box-body -->
-			
-			<div class="box-footer">
-				<button type="submit" class="btn btn-info pull-right" id="addRoom">Add room</button>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-md-12">
-				<div class="box box-widget widget-user-2">
-					<div class="box-footer no-padding">
-						<ul class="nav nav-stacked" id="roomsBox">
-							<?php 
-							if ($this->data['rooms'])
-							{
-								foreach ($this->data['rooms'] as $room)
-								{
-									?>
-							<li>
-								<a href="/edit-room/<?php echo $room['room_id']; ?>/">
-									<strong>[<?php echo $room['condo']; ?>]</strong>
-									<?php echo $room['room'].' / '.$room['room_type']; ?>
-								</a>
-							</li>
-									<?php
-								}
-							}
-							?>
-						</ul>
-					</div>
-				</div><!-- /.widget-user -->
-			</div><!-- /.col -->
-        </div>
-        <?php
-        $content = ob_get_contents();
-        ob_end_clean();
-        return $content;
-    }
-    
-    public function getRoomHead()
-    {
-    	ob_start();
-    	?>
-    	<!-- Select2 -->
-    	<link rel="stylesheet" href="/plugins/select2/select2.min.css">
-    	<?php
-    	$head = ob_get_contents();
-    	ob_end_clean();
-    	return $head;
-    }
-    
-    public function getRoomScripts()
-    {
-    	ob_start();
-    	?>
-		<!-- Select2 -->
-    	<script src="/plugins/select2/select2.full.min.js"></script>
-		<script type="text/javascript">
-		$(function () {
-	        //Initialize Select2 Elements
-	        $(".select2").select2();
-		});
-		</script>
-    	<script src="/js/rooms.js"></script>
-    	<?php
-    	$scripts = ob_get_contents();
-    	ob_end_clean();
-    	return $scripts;
-    }
-    
-    public function getRoomContent()
-    {
-    	ob_start();
-    	?>
-		<div class="box box-success">
-			<div class="box-header with-border">
-				<h3 class="box-title">Update Room</h3>
-            </div><!-- /.box-header -->
-            <div class="box-body" style="display: block;">
-				<div class="row">
-					<div class="col-md-4">
-						<input type="hidden" id="roomId" value="<?php echo $this->data['room']['room_id']; ?>" >
-						<div class="form-group">
-							<label for="exampleInputEmail1">Room name</label>
-							<input type="text" class="form-control" id="roomName" placeholder="Room name" value="<?php echo $this->data['room']['room']; ?>" >
-                  		</div><!-- /.form-group -->
-					</div><!-- /.col -->
-					
-					<div class="col-md-4">
-						<div class="form-group">
-							<label>Room type</label>
-							<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" id="roomType">
-								<?php 
-								foreach ($this->data['types'] as $type)
-								{
-									?>
-								<option value="<?php echo $type['room_type_id']; ?>"><?php echo $type['room_type']; ?></option>
-									<?php
-								}
-								?>
-							</select>
-                  		</div><!-- /.form-group -->
-					</div><!-- /.col -->
-					
-					<div class="col-md-4">
-						<div class="form-group">
-							<label>Condo</label>
-							<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" id="condoId">
-								<?php 
-								foreach ($this->data['condos'] as $type)
-								{
-									?>
-								<option value="<?php echo $type['condo_id']; ?>"><?php echo $type['condo']; ?></option>
-									<?php
-								}
-								?>
-							</select>
-                  		</div><!-- /.form-group -->
-					</div><!-- /.col -->
-				</div><!-- /.row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="form-group">
-							<label for="exampleInputEmail1">Description</label>
-							<textarea class="form-control" rows="3" placeholder="Room description ..." id="roomDescription"><?php echo $this->data['room']['description']; ?></textarea>
-                  		</div><!-- /.form-group -->
-					</div><!-- /.col -->
-				</div>
-			</div><!-- /.box-body -->
-			
-			<div class="box-footer">
-				<button type="submit" class="btn btn-danger btn-sm pull-right" id="deleteRoom">Delete room</button>
-				<button type="submit" class="btn btn-info btn-sm pull-right" id="updateRoom">Update room</button>
-			</div>
-		</div>
-		
-		<div class="box box-info">
-			<div class="box-header with-border">
-				<h3 class="box-title">Add inventory to the room</h3>
-            </div><!-- /.box-header -->
-            <div class="box-body" style="display: block;">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="form-group">
-							<label>Categories</label>
-							<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" id="categoriesList">
-								<?php 
-								foreach ($this->data['categories'] as $category)
-								{
-									?>
-								<option value="<?php echo $category['category_id']; ?>"><?php echo $category['category']; ?></option>
-									<?php
-								}
-								?>
-							</select>
-                  		</div><!-- /.form-group -->
-					</div><!-- /.col -->
-					
-					<div class="col-md-6">
-						<div class="form-group">
-							<label>Inventory</label>
-							<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" id="inventoryList">
-							<?php 
-							if ($this->data['inventory'])
-							{
-								foreach ($this->data['inventory'] as $inventory)
-								{
-									?>
-								<option value="<?php echo $inventory['inventory_id']; ?>"><?php echo $inventory['inventory']; ?></option>
-									<?php
-								}
-							}
-							else 
-							{
-								?>
-								<option value="0">Inventory empty</option>
-								<?php 
-							}
-							?>
-							</select>
-                  		</div><!-- /.form-group -->
-					</div><!-- /.col -->
-				</div><!-- /.row -->
-			</div><!-- /.box-body -->
-			
-			<div class="box-footer">
-				<button type="submit" class="btn btn-info btn-sm pull-right" id="addRoomInventory">Add inventory</button>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-md-12">
-				<div class="box box-success box-widget widget-user-2">
-					<div class="box-footer no-padding">
-						<ul class="nav nav-stacked" id="inventoryBox">
-							<?php 
-							if ($this->data['roomInventory'])
-							{
-								foreach ($this->data['roomInventory'] as $inventory)
-								{
-									?>
-							<li><a href="#"><?php echo $inventory['category'].' / '.$inventory['inventory']; ?></a></li>
-									<?php
-								}
-							}
-							?>
-						</ul>
-					</div>
-				</div><!-- /.widget-user -->
-			</div><!-- /.col -->
-        </div>
-        <?php
-        $content = ob_get_contents();
-        ob_end_clean();
-        return $content;
-    }
-    
-    /**
-   	 * The whole list of members
-   	 * 
-   	 * @return string
-   	 */
-   	public function getRoomsByCondo()
-   	{
-   		ob_start();
-   		?>
-   		<div class="row">
-			<div class="col-xs-12">
-				<div class="box">
-					<div class="box-header">
-						<h3 class="box-title">Recent Owners</h3>
-					</div><!-- /.box-header -->
-					<div class="box-body table-responsive no-padding">
-	                  <table class="table table-hover">
-	                    <tr>
-	                      <th>Member ID</th>
-							<th>Name</th>
-							<th>Room</th>
-							<th>Condo</th>
-							<th>Total</th>
-							<th>Paid</th>
-							<th>Pending</th>
-	                    </tr>
-	                    <?php 
-						foreach ($this->data['members'] as $member)
-						{
-							?>
-						<tr>
-							<td>
-								<a href="/owner/<?php echo $member['member_id']; ?>/<?php echo Tools::slugify($member['name'].' '.$member['last_name']); ?>/">
-									<?php echo $member['member_id']; ?>
-								</a>
-							</td>
-							<td>
-								<a href="/owner/<?php echo $member['member_id']; ?>/<?php echo Tools::slugify($member['name'].' '.$member['last_name']); ?>/" class="member-link">
-									<?php echo $member['name'].' '.$member['last_name']; ?>
-								</a>
-							</td>
-							<td><?php echo $member['room']; ?></td>
-							<td><?php echo $member['condo']; ?></td>
-							<td>$ <?php echo $member['total']; ?></td>
-							<td>$ <?php echo $member['paid']; ?></td>
-							<td>$ <?php echo $member['pending']; ?></td>
-						</tr>
-							<?php
-						}
-						?>
-	                  </table>
-                	</div><!-- /.box-body -->
-				</div><!-- /.box -->
-			</div>
-		</div>
-   		
-   	   	<?php
-   	   	$membersRecent = ob_get_contents();
-   	   	ob_end_clean();
-   	   	return $membersRecent;
-   	}
+   
    	
    	public function getProfileHead()
     {
@@ -2957,10 +2685,1598 @@ class Layout_View
         ob_end_clean();
         return $content;
     }    
-   	
-   	
     
-    public function getSectionHead()
+    public function getAddDestinationHead()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript"></script>
+    	<?php
+    	$head = ob_get_contents();
+    	ob_end_clean();
+    	return $head;
+    }
+    
+    public function getAddDestinationScripts()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript">
+		</script>
+		<script src="/js/destinations.js"></script>
+    	<?php
+    	$scripts = ob_get_contents();
+    	ob_end_clean();
+    	return $scripts;
+    }
+    
+    public function getAddDestinationContent()
+    {
+    	ob_start();
+    	?>
+    	<div class="col-md-6">
+          <!-- Horizontal Form -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-3 control-label">Destination name</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="destinationName" placeholder="">
+                  </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-info pull-right" id="addDestination">Add destination</button>
+                <button type="submit" class="btn btn-success pull-right" id="destinationSuccess">Next</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
+          <!-- /.box -->
+        </div>
+        <?php
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+    
+    public function getDestinationHead()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript"></script>
+    	<link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
+    	<link href="/css/back/uploadfile.css" rel="stylesheet">
+    	<?php
+    	$head = ob_get_contents();
+    	ob_end_clean();
+    	return $head;
+    }
+    
+    public function getDestinationScripts()
+    {
+    	ob_start();
+    	?>
+    	
+		<script src="/js/destinations.js"></script>
+		<script src="/js/back/jquery.uploadfile.min.js"></script>
+		<script src="/plugins/datepicker/bootstrap-datepicker.js"></script>
+		<script type="text/javascript">
+    	//Date picker
+        $('.datepicker').datepicker({
+          autoclose: true
+        });
+		</script>
+    	<?php
+    	$scripts = ob_get_contents();
+    	ob_end_clean();
+    	return $scripts;
+    }
+    
+    public function getDestinationContent()
+    {
+    	ob_start();
+    	?>
+		<input type="hidden" value="<?php echo $_GET['destinationId']; ?>" id="destinationId">
+		<div class="row">
+			<div class="col-md-6">
+				<!-- Horizontal Form -->
+				<!-- general form elements disabled -->
+				<div class="box box-warning">
+					<div class="box-header with-border"></div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<form role="form">
+							<!-- text input -->
+							<div class="form-group">
+								<label>Name</label>
+								<input type="text" class="form-control" placeholder="Enter ..." id="destinationName" value="<?php echo $this->data['destination']['name']; ?>">
+							</div>
+							
+							<!-- textarea -->
+							<div class="form-group">
+								<label>Small description</label>
+								<textarea class="form-control" rows="3" placeholder="Enter ..." id="smallDescription"><?php echo $this->data['destination']['small_description']; ?></textarea>
+							</div>
+							                
+							<!-- textarea -->
+							<div class="form-group">
+								<label>Description</label>
+								<textarea class="form-control" rows="3" placeholder="Enter ..." id="description"><?php echo $this->data['destination']['description']; ?></textarea>
+							</div>
+							<!-- /.box-body -->
+							              
+							<div class="box-footer">
+								<button type="submit" class="btn btn-danger" id="deleteDestination">Delete</button>
+								<button type="submit" class="btn btn-info pull-right" id="updateDestination">Update</button>
+							</div>
+							<!-- /.box-footer -->
+						</form>
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+			</div>
+			<div class="col-md-6">
+				<!-- Horizontal Form -->
+				<!-- general form elements disabled -->
+				<div class="box box-warning">
+					<div class="box-header with-border">
+						<h3>Destination cover (955 * 700 px)</h3>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<form role="form">
+							<!-- text input -->
+							<div class="box-footer">
+								<button type="submit" class="btn btn-info pull-right" id="uploadAvatar">Update</button>
+							</div>
+							<!-- /.box-footer -->
+						</form>
+		              	<?php
+		              	$photo = "/images/default/destination-cover.jpg";
+		              	if ($this->data['destination']['photo'])
+		              	{
+		              		$photo = "/img-up/destinations/avatar/".$this->data['destination']['photo'];
+		              	}
+		              	?>
+						<div class="col-sm-8">
+							<img id="iconImg" src="<?php echo $photo;?>" class="img-responsive" />
+						</div>
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-6">
+				<!-- Horizontal Form -->
+				<!-- general form elements disabled -->
+				<div class="box box-success">
+					<div class="box-header with-border">
+						<h3>Add hotel</h3>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<form role="form">
+							<!-- text input -->
+							<div class="form-group">
+								<label>Hotel name</label>
+								<input type="text" class="form-control" placeholder="" id="hotelName" value="">
+							</div>
+							
+							<!-- textarea 
+							<div class="form-group">
+							<label>Small description</label>
+							<textarea class="form-control" rows="3" placeholder="" id="hotelSmallDescription"></textarea>
+							</div>-->
+							                
+							<div class="box-footer">
+								<button type="submit" class="btn btn-info pull-right" id="addHotel">Add</button>
+							</div>
+							<!-- /.box-footer -->
+						</form>
+					</div>
+					<div class="box-body">
+						<ul id="hotelsBox">
+							<?php echo self::getListHotels();?>
+						</ul>
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+			</div>
+			        
+			<div class="col-md-6" id="hotelDetail"></div>
+		</div>
+        <?php
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+    
+    public function getListHotels()
+    {
+    	ob_start();
+    	
+    	if (isset($this->data['hotels']))
+    	{
+    		foreach ($this->data['hotels'] as $hotel)
+    		{
+    			?>
+				<li><a href="#" class="hotelItem datapicker" data-value="<?php echo $hotel['hotel_id']; ?>"><strong class="text-info"><?php echo $hotel['name']; ?></strong></a></li>
+    			<?php
+    		}
+    	}
+    	
+    	$listHotels = ob_get_contents();
+    	ob_end_clean();
+    	return $listHotels;
+    }
+    
+    public function getMainGalleryHead()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript"></script>
+    	<link href="/css/back/uploadfile.css" rel="stylesheet">
+    	<link href="/css/back/jquery.drag-n-crop.css" rel="stylesheet" type="text/css">
+    	<?php
+    	$head = ob_get_contents();
+    	ob_end_clean();
+    	return $head;
+    }
+    
+    public function getMainGalleryScripts()
+    {
+    	ob_start();
+    	?>
+    	<script src="/js/jquery-ui.min.js"></script>
+    		<script src="/js/back/jquery.uploadfile.min.js"></script>
+    		<script src="/js/back/imagesloaded.js"></script>
+			<script src="/js/back/scale.fix.js"></script>
+			<script src="/js/back/jquery.drag-n-crop.js"></script>
+			<script src="/js/back/main-sliders.js"></script>
+        	<script type="text/javascript">
+			width 	= 0;
+			height 	= 0;
+			image 	= "";
+			x		= 0;
+			y		= 0;
+			lastId 	= 0;
+			
+			var dnd;
+			
+        	$(document).ready(function()
+        	{
+        		$(".uploader").uploadFile({
+	        		url:"/ajax/back/main-sliders.php?option=1",
+	        		fileName:"myfile",
+	        		multiple: false,
+	        		doneStr:"uploaded!",
+	        		onSuccess:function(files,data,xhr)
+	        		{
+	        			obj 	= JSON.parse(data);
+	        			width 	= obj.wp;
+	        			height 	= obj.hp;
+	        			image 	= obj.fileName;
+	        			lastId 	= obj.lastId;
+	        			createDrag(obj.fileName);
+	        			$('.save-crop').show();
+	        		}
+        		});
+				
+        		function createDrag(image)
+        		{
+            		source = '/img-up/main-gallery/medium/'+image;
+            		$('#crop').attr('src', source);
+        			dnd = $('#crop').dragncrop({
+            			instruction: false,
+            			centered: false,
+            			stop: function(evnt, position){
+            			   	dimensions = String(position.dimension);
+            			   	res = dimensions.split(",");
+            			   	x = res[0];
+            			   	y = res[1];
+            			  }
+                    });
+            	}
+
+            	$('#save-crop').click(function(){
+					save();
+					dnd.dragncrop('destroy');
+					return false;
+                });
+
+            	$('#add-slider').click(function(){
+            		$('.main-slider-upload').show();
+            		return false; 
+                });
+
+                $('.save-slider').click(function(){
+					saveSliderData($(this).attr('sid'));
+					return false;
+                });
+
+                $('.delete-slider').click(function(){
+                	deleteSlider($(this).attr('sid'));
+					return false;
+                });
+        	});
+        	
+        	function save()
+        	{
+        		imgId = image;
+        		
+        	    $.ajax({
+        	        type:   'POST',
+        	        url:    '/ajax/back/main-sliders.php?option=2',
+        	        data:{  x: x,
+        	                y: y,
+        	            imgId: imgId
+        	             },
+        	        success:
+        	        function(xml)
+        	        {
+            	        
+        	            if (0 != xml)
+        	            {
+        	            	$('.main-slider-upload').fadeOut();
+        	            	item = '<div class="slider-item main-slider-item" id="sid-'+lastId+'">'
+								+'<header>'
+									+'<a href="#" class="btn btn-danger btn-xs delete-slider" sid="'+lastId+'"> delete</a>'
+									+'<a href="#" class="btn btn-info btn-xs save-slider" sid="'+lastId+'"> save</a>'
+								+'</header>'
+								+'<div class="row">'
+ 									+'<div class="col-md-2"><br>'
+										+'<div class="img-container">'
+											+'<img src="/img-up/main-gallery/thumb/'+imgId+'" />'
+										+'</div>'
+ 									+'</div>'
+									+'<div class="col-md-10"><br>'
+										+'<div class="form-group">'
+								        	+'<label for="inputName" class="col-sm-1 control-label">Title</label>'
+								        	+'<div class="col-sm-11">'
+												+'<input type="" class="form-control slider-title" placeholder="Title" value="">'
+											+'</div>'
+								      	+'</div>'
+								      	
+								      	+'<div class="form-group">'
+								        	+'<label for="inputName" class="col-sm-1 control-label">Link</label>'
+								        	+'<div class="col-sm-11">'
+												+'<input type="" class="form-control slider-link" placeholder="Link" value="">'
+											+'</div>'
+								      	+'</div>'
+								      	
+								      	+'<div class="form-group">'
+								        	+'<label for="inputName" class="col-sm-1 control-label">Promos</label>'
+								        	+'<div class="col-sm-11">'
+												+'<input type="" class="form-control slider-promos" placeholder="Promos" value="">'
+											+'</div>'
+								      	+'</div>'
+									+'</div>'
+	 							+'</div>'
+	 						+'</div>';
+					
+
+							$('#slider-items').prepend(item);
+
+							$('.save-slider').click(function(){
+								saveSliderData($(this).attr('sid'));
+								return false;
+			                });
+
+			                $('.delete-slider').click(function(){
+			                	deleteSlider($(this).attr('sid'));
+								return false;
+			                });
+        	            }
+        	        }
+        	    });
+        	}
+    		</script>
+    	<?php
+    	$scripts = ob_get_contents();
+    	ob_end_clean();
+    	return $scripts;
+    }
+    
+    public function getMainGalleryContent()
+    {
+    	ob_start();
+    	?>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content-box">
+					<header>
+						<div class="form-group">
+							<div class="col-sm-2">
+								<button type="button" id="add-slider" class="btn btn-block btn-info ">Add Slider</button>
+							</div>
+							<div class="col-sm-10"></div>
+						</div>
+					</header>
+					
+					<div class="clear"></div>
+					<br>
+					<p class="text-muted">(1920px / 400px | JPG)</p>
+			
+					<div class="slider-box">
+						<div class="main-slider-upload">
+							<div class="uploader">
+								Upload
+							</div>
+							<div class="clear"></div>
+							<br>
+							<div class="crop-box">
+								<div style="width: 900px; height:400px" class="crop-container"><img src="" id="crop" /></div>
+							</div>
+							
+							<div class="form-group">
+								<div class="col-sm-1">
+									<button type="button"class="btn btn-block btn-success save-crop"  id="save-crop">Save</button>
+								</div>
+								<div class="col-sm-11"></div>
+							</div>
+							
+							<div class="clear"></div>
+						</div>
+						<div id="slider-items">
+							<?php 
+							foreach ($this->data['mainSliders'] as $slider) {
+							?>
+							<div class="slider-item main-slider-item" id="sid-<?php echo $slider['picture_id']; ?>">
+								<header>
+									<a href="#" class=" btn btn-danger btn-xs delete-slider" sid="<?php echo $slider['picture_id']; ?>">delete</a>
+									<a href="#" class="btn btn-info btn-xs save-slider" sid="<?php echo $slider['picture_id']; ?>">save</a>
+								</header>
+								<div class="row">
+									<div class="col-md-2">
+										<br>
+										<div class="img-container">
+						    				<img src="/img-up/main-gallery/thumb/<?php echo $slider['name']; ?>" />
+						    			</div>
+					    			</div>
+					    			<div class="col-md-10">
+					    				<br>
+					    				<div class="form-group">
+					                    	<label for="inputName" class="col-sm-1 control-label">Title</label>
+											<div class="col-sm-11">
+												<input type="" class="form-control slider-title" placeholder="Title" value="<?php echo $slider['title']; ?>">
+											</div>
+					                  	</div>
+					                  	
+					                  	<div class="form-group">
+					                    	<label for="inputName" class="col-sm-1 control-label">Link</label>
+											<div class="col-sm-11">
+												<input type="" class="form-control slider-link" placeholder="Link" value="<?php echo $slider['link']; ?>">
+											</div>
+					                  	</div>
+					                  	
+					                  	<div class="form-group">
+					                    	<label for="inputName" class="col-sm-1 control-label">Promos</label>
+											<div class="col-sm-11">
+												<input type="" class="form-control slider-promos" placeholder="Promos" value="<?php echo $slider['promos']; ?>">
+											</div>
+					                  	</div>
+					                  	
+									</div>
+								</div>
+								<div class="clr"></div>
+							</div>
+							<?php 
+							}
+							?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <?php
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+    
+    public function getGeneralGalleryHead()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript"></script>
+    	<link href="/css/back/uploadfile.css" rel="stylesheet">
+    	<link href="/css/back/jquery.drag-n-crop.css" rel="stylesheet" type="text/css">
+    	<?php
+    	$head = ob_get_contents();
+    	ob_end_clean();
+    	return $head;
+    }
+    
+    public function getGeneralGalleryScripts()
+    {
+    	ob_start();
+    	?>
+    	<script src="/js/jquery-ui.min.js"></script>
+    		<script src="/js/back/jquery.uploadfile.min.js"></script>
+    		<script src="/js/back/imagesloaded.js"></script>
+			<script src="/js/back/scale.fix.js"></script>
+			<script src="/js/back/jquery.drag-n-crop.js"></script>
+			<script src="/js/back/main-sliders.js"></script>
+        	<script type="text/javascript">
+			width = 0;
+			height = 0;
+			image = "";
+			x=0;
+			y=0;
+			lastId = 0;
+			var dnd;
+			
+        	$(document).ready(function()
+        	{
+        		$(".uploader").uploadFile({
+	        		url:"/ajax/back/main-sliders.php?option=5",
+	        		fileName:"myfile",
+	        		multiple: false,
+	        		doneStr:"uploaded!",
+	        		onSuccess:function(files,data,xhr)
+	        		{
+	        			obj 	= JSON.parse(data);
+	        			width 	= obj.wp;
+	        			height 	= obj.hp;
+	        			image 	= obj.fileName;
+	        			lastId 	= obj.lastId;
+	        			createDrag(obj.fileName);
+	        			$('.save-crop').show();
+	        		}
+        		});
+				
+        		function createDrag(image)
+        		{
+            		source = '/img-up/main-gallery/medium/'+image;
+            		$('#crop').attr('src', source);
+        			dnd = $('#crop').dragncrop({
+            			instruction: false,
+            			centered: false,
+            			stop: function(evnt, position){
+            			   	dimensions = String(position.dimension);
+            			   	res = dimensions.split(",");
+            			   	x = res[0];
+            			   	y = res[1];
+            			  }
+                    });
+            	}
+
+            	$('#save-crop').click(function(){
+					save();
+					dnd.dragncrop('destroy');
+					return false;
+                });
+
+            	$('#add-slider').click(function(){
+            		$('.main-slider-upload').show();
+            		return false; 
+                });
+
+                $('.save-slider').click(function(){
+					saveMainSliderData($(this).attr('sid'));
+					return false;
+                });
+
+                $('.delete-slider').click(function(){
+                	deleteMainSlider($(this).attr('sid'));
+					return false;
+                });
+        	});
+        	
+        	function save()
+        	{
+        		imgId = image;
+        		
+        	    $.ajax({
+        	        type:   'POST',
+        	        url:    '/ajax/back/main-sliders.php?option=6',
+        	        data:{  x: x,
+        	                y: y,
+        	            imgId: imgId
+        	             },
+        	        success:
+        	        function(xml)
+        	        {
+            	        
+        	            if (0 != xml)
+        	            {
+        	            	$('.main-slider-upload').fadeOut();
+        	            	item = '<div class="slider-item main-slider-item" id="sid-'+lastId+'">'
+								+'<header>'
+									+'<a href="#" class="btn btn-danger btn-xs delete-slider" sid="'+lastId+'"> delete</a>'
+									+'<a href="#" class="btn btn-info btn-xs save-slider" sid="'+lastId+'"> save</a>'
+								+'</header>'
+								+'<div class="row">'
+ 									+'<div class="col-md-2"><br>'
+										+'<div class="img-container">'
+											+'<img src="/img-up/main-gallery/thumb/'+imgId+'" />'
+										+'</div>'
+ 									+'</div>'
+									+'<div class="col-md-10"><br>'
+										+'<div class="form-group">'
+								        	+'<label for="inputName" class="col-sm-1 control-label">Title</label>'
+								        	+'<div class="col-sm-11">'
+												+'<input type="" class="form-control slider-title" placeholder="Title" value="">'
+											+'</div>'
+								      	+'</div>'
+								      	
+								      	+'<div class="form-group">'
+								        	+'<label for="inputName" class="col-sm-1 control-label">Link</label>'
+								        	+'<div class="col-sm-11">'
+												+'<input type="" class="form-control slider-link" placeholder="Link" value="">'
+											+'</div>'
+								      	+'</div>'
+								      	
+								      	+'<div class="form-group">'
+								        	+'<label for="inputName" class="col-sm-1 control-label">Promos</label>'
+								        	+'<div class="col-sm-11">'
+												+'<input type="" class="form-control slider-promos" placeholder="Promos" value="">'
+											+'</div>'
+								      	+'</div>'
+									+'</div>'
+	 							+'</div>'
+	 						+'</div>';
+					
+
+							$('#slider-items').prepend(item);
+
+							$('.save-slider').click(function(){
+								saveMainSliderData($(this).attr('sid'));
+								return false;
+			                });
+
+			                $('.delete-slider').click(function(){
+			                	deleteMainSlider($(this).attr('sid'));
+								return false;
+			                });
+        	            }
+        	        }
+        	    });
+        	}
+    		</script>
+    	<?php
+    	$scripts = ob_get_contents();
+    	ob_end_clean();
+    	return $scripts;
+    }
+    
+    public function getGeneralGalleryContent()
+    {
+    	ob_start();
+    	?>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content-box">
+					<header>
+						<div class="form-group">
+							<div class="col-sm-2">
+								<button type="button" id="add-slider" class="btn btn-block btn-info ">Add Slider</button>
+							</div>
+							<div class="col-sm-10"></div>
+						</div>
+					</header>
+					
+					<div class="clear"></div>
+					<br>
+					<p class="text-muted">(1076px / 1000px | JPG)</p>
+			
+					<div class="slider-box">
+						<div class="main-slider-upload">
+							<div class="uploader">
+								Upload
+							</div>
+							<div class="clear"></div>
+							<br>
+							<div class="crop-box">
+								<div style="width: 900px; height:836px" class="crop-container"><img src="" id="crop" /></div>
+							</div>
+							
+							<div class="form-group">
+								<div class="col-sm-1">
+									<button type="button"class="btn btn-block btn-success save-crop"  id="save-crop">Save</button>
+								</div>
+								<div class="col-sm-11"></div>
+							</div>
+							
+							<div class="clear"></div>
+						</div>
+						<div id="slider-items">
+							<?php 
+							foreach ($this->data['mainSliders'] as $slider) {
+							?>
+							<div class="slider-item main-slider-item" id="sid-<?php echo $slider['picture_id']; ?>">
+								<header>
+									<a href="#" class=" btn btn-danger btn-xs delete-slider" sid="<?php echo $slider['picture_id']; ?>">delete</a>
+									<a href="#" class="btn btn-info btn-xs save-slider" sid="<?php echo $slider['picture_id']; ?>">save</a>
+								</header>
+								<div class="row">
+									<div class="col-md-2">
+										<br>
+										<div class="img-container">
+						    				<img src="/img-up/main-gallery/thumb/<?php echo $slider['name']; ?>" />
+						    			</div>
+					    			</div>
+					    			<div class="col-md-10">
+					    				<br>
+					    				<div class="form-group">
+					                    	<label for="inputName" class="col-sm-1 control-label">Title</label>
+											<div class="col-sm-11">
+												<input type="" class="form-control slider-title" placeholder="Title" value="<?php echo $slider['title']; ?>">
+											</div>
+					                  	</div>
+					                  	
+					                  	<div class="form-group">
+					                    	<label for="inputName" class="col-sm-1 control-label">Link</label>
+											<div class="col-sm-11">
+												<input type="" class="form-control slider-link" placeholder="Link" value="<?php echo $slider['link']; ?>">
+											</div>
+					                  	</div>
+					                  	
+					                  	<div class="form-group">
+					                    	<label for="inputName" class="col-sm-1 control-label">Promos</label>
+											<div class="col-sm-11">
+												<input type="" class="form-control slider-promos" placeholder="Promos" value="<?php echo $slider['promos']; ?>">
+											</div>
+					                  	</div>
+					                  	
+									</div>
+								</div>
+								<div class="clr"></div>
+							</div>
+							<?php 
+							}
+							?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <?php
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+    
+    public function getDestinationsHead()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript"></script>
+    	<?php
+    	$head = ob_get_contents();
+    	ob_end_clean();
+    	return $head;
+    }
+    
+    public function getDestinationsScripts()
+    {
+    	ob_start();
+    	?>
+    	
+    	<script type="text/javascript">
+		</script>
+		<script src=""></script>
+    	<?php
+    	$scripts = ob_get_contents();
+    	ob_end_clean();
+    	return $scripts;
+    }
+    
+    public function getDestinationsContent()
+    {
+    	ob_start();
+    	?>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="box">
+					<div class="box-header">
+						<h3 class="box-title">Recent destinatios</h3>
+					</div><!-- /.box-header -->
+					<div class="box-body table-responsive no-padding">
+	                  <table class="table table-hover">
+	                    <tr>
+	                      <th>Destination ID</th>
+							<th>Name</th>
+							<th>Small description</th>
+	                    </tr>
+	                    <?php 
+						foreach ($this->data['destinations'] as $member)
+						{
+							?>
+						<tr>
+							<td>
+								<a href="/single-destination/<?php echo $member['destination_id']; ?>/<?php echo Tools::slugify($member['name']); ?>/">
+									<?php echo $member['destination_id']; ?>
+								</a>
+							</td>
+							<td>
+								<a href="/single-destination/<?php echo $member['destination_id']; ?>/<?php echo Tools::slugify($member['name']); ?>/">
+									<?php echo $member['name']; ?>
+								</a>
+							</td>
+							
+							<td>
+								<a href="/single-destination/<?php echo $member['destination_id']; ?>/<?php echo Tools::slugify($member['name']); ?>/">
+									<?php echo $member['small_description']; ?>
+								</a>
+							</td>
+						</tr>
+							<?php
+						}
+						?>
+	                  </table>
+                	</div><!-- /.box-body -->
+				</div><!-- /.box -->
+			</div>
+		</div>
+        <?php
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+    
+    public function getTestimonialHead()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript"></script>
+    	<?php
+    	$head = ob_get_contents();
+    	ob_end_clean();
+    	return $head;
+    }
+    
+    public function getTestimonialScripts()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript">
+		</script>
+		<script src="/js/testimonials.js"></script>
+    	<?php
+    	$scripts = ob_get_contents();
+    	ob_end_clean();
+    	return $scripts;
+    }
+    
+    public function getTestimonialContent()
+    {
+    	ob_start();
+    	?>
+		<div class="col-md-6">
+			<!-- Horizontal Form -->
+			<div class="box box-info">
+				<div class="box-header with-border"></div>
+				<!-- /.box-header -->
+				<!-- form start -->
+				<form class="form-horizontal">
+					<div class="box-body">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-3 control-label">Name</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="testimonialName" placeholder="Name ... ">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-3 control-label">Testimonial</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" rows="3" id="testimonialDescription" placeholder="Testimonial ..."></textarea>
+							</div>
+						</div>
+					</div>
+					<!-- /.box-body -->
+					<div class="box-footer">
+						<button type="submit" class="btn btn-info pull-right" id="addTestimonial">Add testimonial</button>
+					</div>
+					<!-- /.box-footer -->
+				</form>
+			</div>
+			<!-- /.box -->
+		</div>
+		
+		<div class="col-md-6">
+			<div class="box box-info">
+				<div class="box-header with-border"></div>
+					<div id="testimonialsBox">
+					<?php 
+					if ($this->data['testimonials'])
+					{
+						foreach ($this->data['testimonials'] as $testimonial)
+						{
+							?>
+					<div class="post testimonial-post clearfix" id="testimonial-<?php echo $testimonial['testimonial_id']; ?>">
+						<div class="user-block">
+							<span class="username">
+								<a href="#"><?php echo $testimonial['name']; ?></a>
+								<a href="#" class="pull-right btn-box-tool"><i class="fa fa-times delete-testimonial" data-id="<?php echo $testimonial['testimonial_id']; ?>"></i></a>
+							</span>
+						</div>
+						<!-- /.user-block -->
+						<p><?php echo $testimonial['testimonial']; ?></p>
+					</div>
+							<?php
+						}
+					}
+					?>
+					</div>
+			</div>
+		</div>
+        <?php
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+    
+   	/**
+   	 * The very awesome footer!
+   	 * 
+   	 * <s>useless</s>
+   	 * 
+   	 * @return string
+   	 */
+    public function getFooter()
+    {
+    	ob_start();
+    	?>
+		<!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="pull-right hidden-xs">
+                Property Managements
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2016 <a href="#"><?php echo $this->data['appInfo']['siteName']; ?></a>.</strong> All rights reserved.
+        </footer>
+    	<?php
+    	$footer = ob_get_contents();
+    	ob_end_clean();
+    	return $footer;
+	}
+	
+	public function getAddExperienceHead()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript"></script>
+    	<?php
+    	$head = ob_get_contents();
+    	ob_end_clean();
+    	return $head;
+    }
+    
+    public function getAddExperienceScripts()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript">
+		</script>
+		<script src="/js/experiences.js"></script>
+    	<?php
+    	$scripts = ob_get_contents();
+    	ob_end_clean();
+    	return $scripts;
+    }
+    
+    public function getAddExperienceContent()
+    {
+    	ob_start();
+    	?>
+		<div class="col-md-6">
+			<!-- Horizontal Form -->
+			<div class="box box-info">
+				<div class="box-header with-border"></div>
+				<!-- /.box-header -->
+				<!-- form start -->
+				<form class="form-horizontal">
+					<div class="box-body">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-3 control-label">Experience name</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="experienceName" placeholder="">
+							</div>
+						</div>
+					</div>
+					<!-- /.box-body -->
+					<div class="box-footer">
+						<button type="submit" class="btn btn-info pull-right" id="addExperience">Add experience</button>
+						<button type="submit" class="btn btn-success pull-right" id="experienceSuccess">Next</button>
+					</div>
+					<!-- /.box-footer -->
+				</form>
+			</div>
+			<!-- /.box -->
+		</div>
+        <?php
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+    
+    public function getAddExtraHead()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript"></script>
+    	<?php
+    	$head = ob_get_contents();
+    	ob_end_clean();
+    	return $head;
+    }
+    
+    public function getAddExtraScripts()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript">
+		</script>
+		<script src="/js/extras.js"></script>
+    	<?php
+    	$scripts = ob_get_contents();
+    	ob_end_clean();
+    	return $scripts;
+    }
+    
+    public function getAddExtraContent()
+    {
+    	ob_start();
+    	?>
+    	<div class="col-md-6">
+          <!-- Horizontal Form -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-3 control-label">Extra name</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="extraName" placeholder="">
+                  </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-info pull-right" id="addExtra">Add extra</button>
+                <button type="submit" class="btn btn-success pull-right" id="extraSuccess">Next</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
+          <!-- /.box -->
+        </div>
+        <?php
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+    
+    public function getExtraHead()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript"></script>
+    	<link href="/css/back/uploadfile.css" rel="stylesheet">
+    	<?php
+    	$head = ob_get_contents();
+    	ob_end_clean();
+    	return $head;
+    }
+    
+    public function getExtraScripts()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript">
+		</script>
+		<script src="/js/extras.js"></script>
+		<script src="/js/back/jquery.uploadfile.min.js"></script>
+    	<?php
+    	$scripts = ob_get_contents();
+    	ob_end_clean();
+    	return $scripts;
+    }
+    
+    public function getExtraContent()
+    {
+    	ob_start();
+    	?>
+		<input type="hidden" value="<?php echo $_GET['extraId']; ?>" id="extraId">
+		<div class="col-md-6">
+			<!-- Horizontal Form -->
+			<!-- general form elements disabled -->
+			<div class="box box-warning">
+				<div class="box-header with-border"></div>
+				<!-- /.box-header -->
+				<div class="box-body">
+					<form role="form">
+						<!-- text input -->
+						<div class="form-group">
+							<label>Name</label>
+							<input type="text" class="form-control" placeholder="Enter ..." id="extraName" value="<?php echo $this->data['extra']['name']; ?>">
+						</div>
+						
+						<!-- text input -->
+						<div class="form-group">
+							<label>Price</label>
+							<input type="text" class="form-control" placeholder="Enter ..." id="extraPrice" value="<?php echo $this->data['extra']['price']; ?>">
+						</div>
+						
+						<!-- textarea -->
+						<div class="form-group">
+							<label>Small description</label>
+							<textarea class="form-control" rows="3" placeholder="Enter ..." id="smallDescription"><?php echo $this->data['extra']['small_description']; ?></textarea>
+						</div>
+						                
+						<!-- textarea -->
+						<div class="form-group">
+							<label>Description</label>
+							<textarea class="form-control" rows="3" placeholder="Enter ..." id="description"><?php echo $this->data['extra']['description']; ?></textarea>
+						</div>
+						<!-- /.box-body -->
+						              
+						<div class="box-footer">
+							<button type="submit" class="btn btn-danger" id="deleteExtra">Delete</button>
+							<button type="submit" class="btn btn-info pull-right" id="updateExtra">Update</button>
+						</div>
+						<!-- /.box-footer -->
+					</form>
+				</div>
+				<!-- /.box-body -->
+			</div>
+			<!-- /.box -->
+		</div>
+		<div class="col-md-6">
+			<!-- Horizontal Form -->
+			<!-- general form elements disabled -->
+			<div class="box box-warning">
+				<div class="box-header with-border">
+					<h3>Extra cover (954 * 700 px)</h3>
+				</div>
+				<!-- /.box-header -->
+				<div class="box-body">
+					<form role="form">
+						<!-- text input -->
+						<div class="box-footer">
+							<button type="submit" class="btn btn-info pull-right" id="uploadAvatar">Update</button>
+						</div>
+						<!-- /.box-footer -->
+					</form>
+					<?php
+					$photo = "/images/default/destination-cover.jpg";
+					if (isset($this->data['extra']['photo']))
+					{
+						$photo = "/img-up/extras/avatar/".$this->data['extra']['photo'];
+					}
+					?>
+					<div class="col-sm-8">
+						<img id="iconImg" src="<?php echo $photo;?>" class="img-responsive" />
+					</div>
+				</div>
+				<!-- /.box-body -->
+			</div>
+			<!-- /.box -->
+		</div>
+        <?php
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+    
+    public function getExtraListHead()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript"></script>
+    	<?php
+    	$head = ob_get_contents();
+    	ob_end_clean();
+    	return $head;
+    }
+    
+    public function getExtraListScripts()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript">
+		</script>
+		<script src=""></script>
+    	<?php
+    	$scripts = ob_get_contents();
+    	ob_end_clean();
+    	return $scripts;
+    }
+    
+    public function getExtraListContent()
+    {
+    	ob_start();
+    	?>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="box">
+					<div class="box-header">
+						<h3 class="box-title">Recent extras</h3>
+					</div><!-- /.box-header -->
+					<div class="box-body table-responsive no-padding">
+	                  <table class="table table-hover">
+	                    <tr>
+	                      <th>Extra ID</th>
+							<th>Name</th>
+							<th>Small description</th>
+	                    </tr>
+	                    <?php 
+						foreach ($this->data['extras'] as $member)
+						{
+							?>
+						<tr>
+							<td>
+								<a href="/single-extra/<?php echo $member['extra_id']; ?>/<?php echo Tools::slugify($member['name']); ?>/">
+									<?php echo $member['extra_id']; ?>
+								</a>
+							</td>
+							<td>
+								<a href="/single-extra/<?php echo $member['extra_id']; ?>/<?php echo Tools::slugify($member['name']); ?>/">
+									<?php echo $member['name']; ?>
+								</a>
+							</td>
+							
+							<td>
+								<a href="/single-extra/<?php echo $member['extra_id']; ?>/<?php echo Tools::slugify($member['name']); ?>/">
+									<?php echo $member['small_description']; ?>
+								</a>
+							</td>
+						</tr>
+							<?php
+						}
+						?>
+	                  </table>
+                	</div><!-- /.box-body -->
+				</div><!-- /.box -->
+			</div>
+		</div>
+        <?php
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    } 
+    
+    public function getExperienceHead()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript"></script>
+    	<link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
+    	<link href="/css/back/uploadfile.css" rel="stylesheet">
+    	<?php
+    	$head = ob_get_contents();
+    	ob_end_clean();
+    	return $head;
+    }
+    
+    public function getExperienceScripts()
+    {
+    	ob_start();
+    	?>
+    	
+		<script src="/js/experiences.js"></script>
+		<script src="/js/back/jquery.uploadfile.min.js"></script>
+		<script src="/plugins/datepicker/bootstrap-datepicker.js"></script>
+		<script type="text/javascript">
+    	//Date picker
+        $('.datepicker').datepicker({
+          autoclose: true
+        });
+		</script>
+    	<?php
+    	$scripts = ob_get_contents();
+    	ob_end_clean();
+    	return $scripts;
+    }
+    
+    public function getExperienceContent()
+    {
+    	ob_start();
+    	$experience = $this->data['experience'];
+    	?>
+		<input type="hidden" value="<?php echo $_GET['experienceId']; ?>" id="experienceId">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- Horizontal Form -->
+				<!-- general form elements disabled -->
+				<div class="box box-warning">
+					<div class="box-header with-border"></div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<form role="form">
+							<!-- text input -->
+							<div class="form-group">
+								<label>Name</label>
+								<input type="text" class="form-control" placeholder="Enter ..." id="experienceName" value="<?php echo $this->data['experience']['name']; ?>">
+							</div>
+							
+							<!-- textarea -->
+							<div class="form-group">
+								<label>Small description</label>
+								<textarea class="form-control" rows="3" placeholder="Enter ..." id="smallDescription"><?php echo $this->data['experience']['small_description']; ?></textarea>
+							</div>
+							                
+							<!-- textarea -->
+							<div class="form-group">
+								<label>Description</label>
+								<textarea class="form-control" rows="3" placeholder="Enter ..." id="description"><?php echo $this->data['experience']['description']; ?></textarea>
+							</div>
+							<!-- /.box-body -->
+							              
+							<div class="box-footer">
+								<button type="submit" class="btn btn-danger" id="deleteExperience">Delete</button>
+								<button type="submit" class="btn btn-info pull-right" id="updateExperience">Update</button>
+							</div>
+							<!-- /.box-footer -->
+						</form>
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-6">
+				<!-- Horizontal Form -->
+				<!-- general form elements disabled -->
+				<div class="box box-warning">
+					<div class="box-header with-border">
+						<h3>Experience cover (955 * 700 px)</h3>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<form role="form">
+							<!-- text input -->
+							<div class="box-footer">
+								<button type="submit" class="btn btn-info pull-right" id="uploadAvatar">Update</button>
+							</div>
+							<!-- /.box-footer -->
+						</form>
+		              	<?php
+		              	$photo = "/images/default/destination-cover.jpg";
+		              	if ($this->data['experience']['photo'])
+		              	{
+		              		$photo = "/img-up/experiences/avatar/".$this->data['experience']['photo'];
+		              	}
+		              	?>
+						<div class="col-sm-8">
+							<img id="iconImg" src="<?php echo $photo;?>" class="img-responsive" />
+						</div>
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+			</div>
+			<div class="col-md-6">
+				<!-- Horizontal Form -->
+				<!-- general form elements disabled -->
+				<div class="box box-warning">
+					<div class="box-header with-border">
+						<h3>Experience swipper (1920 * 852 px)</h3>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<form role="form">
+							<!-- text input -->
+							<div class="box-footer">
+								<button type="submit" class="btn btn-info pull-right" id="uploadSwipper">Update</button>
+							</div>
+							<!-- /.box-footer -->
+						</form>
+		              	<?php
+		              	$photo = "/images/default/swiper.jpg";
+		              	if (isset($this->data['experience']['swiper']))
+		              	{
+		              		$photo = "/img-up/experiences/avatar/".$this->data['experience']['swiper'];
+		              	}
+		              	?>
+						<div class="col-sm-8">
+							<img id="swiperImg" src="<?php echo $photo;?>" class="img-responsive" />
+						</div>
+					</div>
+					<!-- /.box-body -->
+				</div>
+				<!-- /.box -->
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-6">
+				<!-- Horizontal Form -->
+				<!-- general form elements disabled -->
+				<div class="box box-success">
+					<div class="box-header with-border">
+						<h3>Available locations</h3>
+					</div>
+					
+					<div class="box-body">
+						<div class="row" id="aliadosBoxItems">
+							<?php 
+							if ($this->data['destinations'])
+							{
+								foreach ($this->data['destinations'] as $destination)
+								{
+									?>
+							<div class="col-md-4 aliados-choose" id="itemPicture-<?php echo $destination['destination_id']; ?>">
+								<div class="image">
+									<img alt="" width="100" src="/img-up/destinations/avatar/<?php echo $destination['photo']; ?>">
+								</div>
+								<div >
+									<input type="checkbox" aliadoId="<?php echo $destination['destination_id']; ?>"  class="aliado-item" <?php if($destination['checked'] == 1){echo "checked";} ?>> 
+									<label><?php echo $destination['name']; ?></label>
+								</div>
+							</div>
+									<?php
+								}
+							}
+							?>
+						</div>
+					</div>
+					<!-- /.box-body -->
+					
+					<!-- /.box-header -->
+					<div class="box-body">
+						<form role="form">  
+							<div class="box-footer">
+								<button type="submit" class="btn btn-info pull-right" id="updateDestinations">Update destinations</button>
+							</div>
+							<!-- /.box-footer -->
+						</form>
+					</div>
+				</div>
+				<!-- /.box -->
+			</div>
+			        
+			<div class="col-md-6" id="">
+				<!-- Horizontal Form -->
+				<!-- general form elements disabled -->
+				<div class="box box-success">
+					<div class="box-header with-border">
+						<h3>Available extras</h3>
+					</div>
+					
+					<div class="box-body">
+						<div class="row" id="extrasBoxItems">
+							<?php 
+							if ($this->data['extras'])
+							{
+								foreach ($this->data['extras'] as $extra)
+								{
+									?>
+							<div class="col-md-4 aliados-choose" id="itemPicture-<?php echo $extra['extra_id']; ?>">
+								<div class="image">
+									<img alt="" width="100" src="/img-up/extras/avatar/<?php echo $extra['photo']; ?>">
+								</div>
+								<div >
+									<input type="checkbox" aliadoId="<?php echo $extra['extra_id']; ?>"  class="aliado-item" <?php if($extra['checked'] == 1){echo "checked";} ?>> 
+									<label><?php echo $extra['name']; ?></label>
+								</div>
+							</div>
+									<?php
+								}
+							}
+							?>
+						</div>
+					</div>
+					<!-- /.box-body -->
+					
+					<!-- /.box-header -->
+					<div class="box-body">
+						<form role="form">  
+							<div class="box-footer">
+								<button type="submit" class="btn btn-info pull-right" id="updateExtras">Update extras</button>
+							</div>
+							<!-- /.box-footer -->
+						</form>
+					</div>
+				</div>
+				<!-- /.box -->
+			</div>
+		</div>
+        <?php
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+    
+    public function getExperiencesListHead()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript"></script>
+    	<?php
+    	$head = ob_get_contents();
+    	ob_end_clean();
+    	return $head;
+    }
+
+    public function getExperiencesListScripts()
+    {
+    	ob_start();
+    	?>
+    	<script type="text/javascript">
+		</script>
+		<script src=""></script>
+    	<?php
+    	$scripts = ob_get_contents();
+    	ob_end_clean();
+    	return $scripts;
+    }
+
+    public function getExperiencesListContent()
+    {
+    	ob_start();
+    	?>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="box">
+					<div class="box-header">
+						<h3 class="box-title">Recent experiences</h3>
+					</div><!-- /.box-header -->
+					<div class="box-body table-responsive no-padding">
+	                  <table class="table table-hover">
+	                    <tr>
+	                      <th>Experience ID</th>
+							<th>Name</th>
+							<th>Small description</th>
+	                    </tr>
+	                    <?php 
+						foreach ($this->data['experiences'] as $member)
+						{
+							?>
+						<tr>
+							<td>
+								<a href="/single-experience/<?php echo $member['experience_id']; ?>/<?php echo Tools::slugify($member['name']); ?>/">
+									<?php echo $member['experience_id']; ?>
+								</a>
+							</td>
+							<td>
+								<a href="/single-experience/<?php echo $member['experience_id']; ?>/<?php echo Tools::slugify($member['name']); ?>/">
+									<?php echo $member['name']; ?>
+								</a>
+							</td>
+							
+							<td>
+								<a href="/single-experience/<?php echo $member['experience_id']; ?>/<?php echo Tools::slugify($member['name']); ?>/">
+									<?php echo $member['small_description']; ?>
+								</a>
+							</td>
+						</tr>
+							<?php
+						}
+						?>
+	                  </table>
+                	</div><!-- /.box-body -->
+				</div><!-- /.box -->
+			</div>
+		</div>
+        <?php
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    } 
+	
+	public function getSectionHead()
     {
     	ob_start();
     	?>
@@ -2994,66 +4310,4 @@ class Layout_View
         ob_end_clean();
         return $content;
     }
-    
-    public function getAddTravelHead()
-    {
-    	ob_start();
-    	?>
-    	<script type="text/javascript"></script>
-    	<?php
-    	$head = ob_get_contents();
-    	ob_end_clean();
-    	return $head;
-    }
-    
-    public function getAddTravelScripts()
-    {
-    	ob_start();
-    	?>
-    	<script type="text/javascript">
-		</script>
-		<script src=""></script>
-    	<?php
-    	$scripts = ob_get_contents();
-    	ob_end_clean();
-    	return $scripts;
-    }
-    
-    public function getAddTravelContent()
-    {
-    	ob_start();
-    	?>
-
-        <?php
-        $content = ob_get_contents();
-        ob_end_clean();
-        return $content;
-    }
-    
-   	
-   	/**
-   	 * The very awesome footer!
-   	 * 
-   	 * <s>useless</s>
-   	 * 
-   	 * @return string
-   	 */
-    public function getFooter()
-    {
-    	ob_start();
-    	?>
-		<!-- Main Footer -->
-        <footer class="main-footer">
-            <!-- To the right -->
-            <div class="pull-right hidden-xs">
-                Property Managements
-            </div>
-            <!-- Default to the left -->
-            <strong>Copyright &copy; 2016 <a href="#"><?php echo $this->data['appInfo']['siteName']; ?></a>.</strong> All rights reserved.
-        </footer>
-    	<?php
-    	$footer = ob_get_contents();
-    	ob_end_clean();
-    	return $footer;
-	}
 }
