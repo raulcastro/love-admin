@@ -1,0 +1,61 @@
+RewriteEngine On
+
+# Error Pages
+ErrorDocument 401 /not-found.html
+ErrorDocument 403 /not-found.html
+ErrorDocument 404 /not-found.html
+ErrorDocument 500 /not-found.html
+
+# Prevent directory browsing
+Options -Indexes +FollowSymLinks -MultiViews
+
+# Canonical host
+RewriteCond %{HTTP_HOST}    ^www\.(.*)      [NC]
+RewriteRule ^(.*)$          http://%1/$1    [L,R,NE]
+
+#Needed
+RewriteRule ^sitemap.xml$ sitemap.xml
+
+# Rewrite Rules
+RewriteRule ^sign-out/$ 					/sign-out.php
+RewriteRule ^dashboard/$ 					/dashboard.php?section=1
+RewriteRule ^add-guest/$ 					/add-member.php?section=2
+RewriteRule ^guests/$ 						/members.php?section=3
+RewriteRule ^tasks/$ 						/tasks.php?section=4
+RewriteRule ^([0-9]+)/([A-Za-z0-9-]+)/$ 	/add-member.php?memberId=$1&section=6
+RewriteRule ^email/$ 						/email.php?section=7
+RewriteRule ^reservations/$ 				/reservations.php?section=12
+RewriteRule ^settings/$ 					/settings.php?section=16
+RewriteRule ^add-owner/$ 					/add-owner.php?section=16
+RewriteRule ^owner/([0-9]+)/([A-Za-z0-9-]+)/$ 	/member.php?memberId=$1&section=6
+RewriteRule ^owners/$ 						/members.php?section=6
+RewriteRule ^profile/$ 						/profile.php?section=16
+RewriteRule ^location-list/$ 						/locations.php?section=6
+RewriteRule ^location/([0-9]+)/([A-Za-z0-9-]+)/$ 	/location.php?memberId=$1&section=6
+
+RewriteRule ^add-main-gallery/$ 						/add-main-gallery.php?section=6
+RewriteRule ^add-general-gallery/$ 						/add-general-gallery.php?section=6
+
+RewriteRule ^destinations/$ 					/destinations.php?section=16
+RewriteRule ^add-destination/$ 					/add-destination.php?section=16
+RewriteRule ^single-destination/([0-9]+)/([A-Za-z0-9-]+)/$ 	/single-destination.php?destinationId=$1&section=6
+RewriteRule ^testimonials/$ 					/testimonials.php?section=16
+RewriteRule ^add-experience/$ 					/add-experience.php?section=16
+RewriteRule ^single-experience/([0-9]+)/([A-Za-z0-9-]+)/$ 	/single-experience.php?experienceId=$1&section=6
+RewriteRule ^experiences/$ 					/experiences.php?section=16
+RewriteRule ^extras/$ 					/extras.php?section=16
+RewriteRule ^add-extra/$ 					/add-extra.php?section=1
+RewriteRule ^single-extra/([0-9]+)/([A-Za-z0-9-]+)/$ 	/single-extra.php?extraId=$1&section=6
+
+
+
+
+
+
+
+
+
+
+
+
+
