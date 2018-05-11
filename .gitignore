@@ -4,7 +4,7 @@ deploy/
 Framework/Connection_Data.php
 
 # Useless folders
-img-up/
+img-up
 
 # System
 __MACOSX
