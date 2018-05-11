@@ -60,7 +60,7 @@ class Layout_View
 			<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <![endif]-->
 			<meta charset="utf-8" />
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    		<meta name="viewport" content="width=device-width, initial-scale=1">
+    			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<link rel="shortcut icon" href="favicon.ico" />
 			<link rel="icon" type="image/gif" href="favicon.ico" />
 			<title><?php echo $this->data['title']; ?> - <?php echo $this->data['appInfo']['title']; ?></title>
@@ -2897,6 +2897,7 @@ class Layout_View
 			</div>
 			        
 			<div class="col-md-6" id="hotelDetail"></div>
+			
 		</div>
         <?php
         $content = ob_get_contents();

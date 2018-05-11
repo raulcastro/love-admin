@@ -2011,7 +2011,6 @@ class Layout_Model
 	{
 		try {
 			$query = 'INSERT INTO experiences_extras(experience_id, extra_id) VALUES('.$sectionId.', '.$aliadoId.')';
-	
 			return $this->db->run($query);
 		} catch (Exception $e) {
 			return false;
@@ -2033,6 +2032,63 @@ class Layout_Model
 		try {
 			$query = 'SELECT * FROM experiences_extras WHERE experience_id = '.$experienceId.' AND extra_id = '.$extraId;
 			return $this->db->getArray($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function getExperiencesByLocation($destinationId, $hotelId)
+	{
+		try {
+			$destinationId = (int) $destinationId;
+			$query = '
+			SELECT
+			e.name,
+			ed.experience_id,
+			he.price
+			FROM experiences_destinations ed
+			LEFT JOIN experiences e ON ed.experience_id = e.experience_id
+			LEFT JOIN hotel_experiences he ON e.experience_id = he.experience_id
+			WHERE ed.destination_id = '.$destinationId.' AND he.hotel_id = '.$hotelId.'
+			GROUP BY ed.experience_id';
+			//WHERE ed.destination_id = '.$destinationId.' AND he.hotel_id = '.$hotelId.'
+// 			echo $query;
+			return $this->db->getArray($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function getLocationByHotelId($hotelId)
+	{
+		try {
+			$hotelId = (int) $hotelId;
+			$query = 'SELECT destination_id FROM hotels WHERE hotel_id = '.$hotelId;
+			return $this->db->getValue($query);
+		} catch (Exception $e) {
+			return false;
+		}
+	}
+	
+	public function addHotelExperiencesPrice($data)
+	{
+		try {
+			$query = "SELECT relacion_id FROM hotel_experiences WHERE hotel_id = ".$data['hotelId'].' && experience_id = '.$data['experienceId'];
+			
+			$relationId = $this->db->getValue($query);
+			if ($relationId > 0)
+			{
+				#update
+				$query = 'UPDATE hotel_experiences SET price = '.$data['experiencePrice'].' WHERE relacion_id = '.$relationId;
+				return $this->db->run($query);
+			}
+			else
+			{
+				#insert
+				$query = 'INSERT INTO hotel_experiences(hotel_id, experience_id, price) VALUES('.$data['hotelId'].', '.$data['experienceId'].', '.$data['experiencePrice'].' )';
+				return $this->db->run($query);
+			}
+			
 		} catch (Exception $e) {
 			return false;
 		}

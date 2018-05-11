@@ -76,6 +76,9 @@ switch ($_POST['opt'])
 	case 6:
 		if ($_POST['hotelId'])
 		{
+			$destinationId = $model->getLocationByHotelId($_POST['hotelId']);
+			$experiencesList = $model->getExperiencesByLocation($destinationId, $_POST['hotelId']);
+			
 			if ($hotel = $model->getHotelByHotelId($_POST['hotelId']))
 			{
 				$hotelRanges = $model->getAllHotelRangesByHotel($_POST['hotelId']);
@@ -161,6 +164,46 @@ switch ($_POST['opt'])
 					<!-- /.box-body -->
 				</div>
 				<!-- /.box -->
+				
+				<!-- Horizontal Form -->
+				<!-- general form elements disabled -->
+				<div class="box box-success">
+					<div class="box-header with-border">
+						<h3>
+							<span>Available experiences</span>
+						</h3>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<form role="form" id="experiencesList">
+							<?php 
+							
+							foreach ($experiencesList as $experience)
+							{
+								if(!$experience['price'])
+									$price = "0.00";
+								else 
+									$price = $experience['price'];
+							?>
+							<div class="row">
+								<div class="col-xs-3">
+									<label><?php echo $experience['name']; ?></label>
+								</div>
+								
+								<div class="col-xs-4">
+									<input type="text" class="form-control" id="" value="<?php echo $price; ?>" placeholder="Price" experienceId="<?php echo $experience['experience_id'];?>">
+								</div>
+							</div>
+							<?php 
+							}
+							?>
+							<div class="box-footer">
+								<button type="submit" class="btn btn-info pull-right" id="saveExperiencesPrices">Save</button>
+							</div>
+							<!-- /.box-footer -->
+						</form>
+					</div>
+				</div>
 				<?php
 			}
 			
@@ -200,6 +243,14 @@ switch ($_POST['opt'])
 			else
 				echo 0;
 		}
+	break;
+	
+	case 10:
+		if ($_POST['experiencePrice'] > 0)
+		{
+			$model->addHotelExperiencesPrice($_POST);
+		}	
+		
 	break;
 	
 	default:

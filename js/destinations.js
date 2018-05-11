@@ -106,7 +106,6 @@ function addDestination()
 	}
 }
 
-
 function updateInventoryOptionsRooms(categoryId)
 {
 	roomId = $('#currentRoom').val();
@@ -140,7 +139,6 @@ function updateInventoryOptionsRooms(categoryId)
         }
     });
 }
-
 
 function updateDestination()
 {
@@ -317,6 +315,11 @@ function showHotelDetail(node, currentHotel)
 	        			deleteHotelRange(this);
 	        			return false;
 	        		});
+	        		
+	        		$('#saveExperiencesPrices').click(function(){
+	        			saveExperiencesPrices();
+	        			return false;
+	        		});
 	        	}
 	        	else
 				{
@@ -434,7 +437,44 @@ function deleteHotelRange(node)
 }
 
 
-
+function saveExperiencesPrices()
+{
+	var hotelId 	= $('#currentHotelId').val();
+	
+	$('#experiencesList input').each(function(node){
+		var experienceId = $(this).attr('experienceId');
+		var experiencePrice = $(this).val();
+		
+		if (experiencePrice > 0)
+		{
+			$.ajax({
+			    type: "POST",
+			    url: "/ajax/destinations.php",
+			    data: {
+			    	hotelId:	hotelId,
+			    	experienceId:	experienceId,
+			    	experiencePrice: experiencePrice,
+			    	opt:		10
+			    },
+			    success:
+			        function(info)
+			        {
+			        	if (info != '0')
+			        	{
+//			        		showHotelDetail(null, hotelId);
+//			        		$('#hotelDetail').hide();
+//			        		$('#hotelDetail').html('');
+			        		
+//			        		getAllHotels();
+			        	}
+			        	else
+						{
+						}
+			        }
+			    });
+		}
+	});
+}
 
 
 
